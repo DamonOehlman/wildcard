@@ -34,3 +34,7 @@ var testdata = {
 
 wildcard('a.*.c', testdata); // { 'a.b.c': {} }
 ```
+
+While the library works in Node, if you are are looking for file-based wildcard matching then you should have a look at:
+
+https://github.com/isaacs/node-glob
