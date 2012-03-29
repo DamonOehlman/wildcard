@@ -47,3 +47,5 @@ function wildcard(text, test) {
 
     return matcher;
 }
+
+module.exports = wildcard;

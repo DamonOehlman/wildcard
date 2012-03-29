@@ -3,8 +3,8 @@
   "description": "Wildcard matching tools",
   "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
   "tags": [ "string", "wildcard" ],
-  "version": "0.0.1",
-  "main": "./wildcard.js",
+  "version": "0.1.0",
+  "main": "pkg/cjs/wildcard",
 
   "engines": {
     "node": ">= 0.4.x < 0.7.0"
