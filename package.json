@@ -2,22 +2,20 @@
   "name": "wildcard",
   "description": "Wildcard matching tools",
   "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-  "tags": [ "string", "wildcard" ],
-  "version": "0.1.0",
+  "tags": [
+    "string",
+    "wildcard"
+  ],
+  "version": "0.1.1",
   "main": "dist/commonjs/wildcard",
-
   "engines": {
     "node": ">= 0.4.x < 0.7.0"
   },
-  
-  "dependencies": {
-  },
-
+  "dependencies": {},
   "devDependencies": {
     "mocha": "*",
     "expect.js": "0.1.x"
   },
-
   "repository": {
     "type": "git",
     "url": "git://github.com/DamonOehlman/wildcard.git"
@@ -28,6 +26,5 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --reporter spec"
   },
-  
   "contributors": []
 }
