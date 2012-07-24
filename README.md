@@ -2,6 +2,8 @@
 
 Very simple wildcard matching, which is designed to provide the same functionality that is found in the [eve](https://github.com/DmitryBaranovskiy/eve) eventing library.
 
+<a href="http://travis-ci.org/#!/DamonOehlman/wildcard"><img src="https://secure.travis-ci.org/DamonOehlman/wildcard.png" alt="Build Status"></a>
+
 It works with strings:
 
 ```js
