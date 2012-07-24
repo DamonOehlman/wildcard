@@ -1,3 +1,6 @@
+
+
+
 var reSep = /[\/\.]/;
 
 function WildcardMatcher(text) {
@@ -48,4 +51,6 @@ function wildcard(text, test) {
     return matcher;
 }
 
-module.exports = wildcard;
+if (typeof wildcard != 'undefined') {
+    module.exports = wildcard;
+}

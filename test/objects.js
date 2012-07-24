@@ -1,4 +1,4 @@
-var wildcard = require('../pkg/cjs/wildcard'),
+var wildcard = require('../dist/commonjs/wildcard'),
     expect = require('expect.js'),
     testdata = {
         'a.b.c' : {},
