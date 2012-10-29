@@ -1,0 +1,15 @@
+{
+  "name": "wildcard",
+  "repo": "DamonOehlman/wildcard",
+  "description": "Wildcard matching tools",
+  "version": "0.1.2",
+  "keywords": [
+    "wildcard",
+    "match",
+    "comparison"
+  ],
+  "main": "wildcard.js",
+  "scripts": [
+    "wildcard.js"
+  ]
+}
