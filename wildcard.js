@@ -1,5 +1,21 @@
+/*
+ * wildcard v0.1.2
+ * build   => 2012-10-29T22:36:39.454Z
+ * 
+ * 
+ *  
+ */ 
 
-define('wildcard', [], function() {
+// umdjs returnExports pattern: https://github.com/umdjs/umd/blob/master/returnExports.js
+(function (root, factory) {
+    if (typeof exports === 'object') {
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) {
+        define([], factory);
+    } else {
+        root['wildcard'] = factory();
+    }
+}(this, function () {
     var reSep = /[\/\.]/;
     
     function WildcardMatcher(text) {
@@ -51,4 +67,4 @@ define('wildcard', [], function() {
     }
     
     return typeof wildcard != 'undefined' ? wildcard : undefined;
-});
+}));
