@@ -1,11 +1,3 @@
-/*
- * wildcard v0.1.2
- * build   => 2012-10-29T22:36:39.454Z
- * 
- * 
- *  
- */ 
-
 // umdjs returnExports pattern: https://github.com/umdjs/umd/blob/master/returnExports.js
 (function (root, factory) {
     if (typeof exports === 'object') {

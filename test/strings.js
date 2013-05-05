@@ -1,24 +1,12 @@
-var wildcard = require('../wildcard'),
-    expect = require('expect.js');
+var test = require('tape'),
+    wildcard = require('../');
     
-describe('general wild card matching tests', function() {
-    it('foo.* should match foo.bar', function() {
-        expect(wildcard('foo.*', 'foo.bar')).to.be.ok();
-    });
-    
-    it('foo.* should match foo', function() {
-        expect(wildcard('foo.*', 'foo')).to.be.ok();
-    });
+test('general wild card matching tests', function(t) {
 
-    it('foo.* should not match bar', function() {
-        expect(wildcard('foo.*', 'bar')).to.not.be.ok();
-    });
-
-    it('a.*.c should match a.b.c', function() {
-        expect(wildcard('a.*.c', 'a.b.c')).to.be.ok();
-    });
-    
-    it('a.*.c should not match a.b', function() {
-        expect(wildcard('a.*.c', 'a.b')).to.not.be.ok();
-    });
+    t.plan(5);
+    t.ok(wildcard('foo.*', 'foo.bar'), 'foo.* should match foo.bar');
+    t.ok(wildcard('foo.*', 'foo'), 'foo.* should match foo');
+    t.notOk(wildcard('foo.*', 'bar'), 'foo.* should not match bar');
+    t.ok(wildcard('a.*.c', 'a.b.c'), 'a.*.c should match a.b.c');
+    t.notOk(wildcard('a.*.c', 'a.b'), 'a.*.c should not match a.b');
 });

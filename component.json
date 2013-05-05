@@ -8,8 +8,8 @@
     "match",
     "comparison"
   ],
-  "main": "wildcard.js",
+  "main": "index.js",
   "scripts": [
-    "wildcard.js"
+    "index.js"
   ]
 }

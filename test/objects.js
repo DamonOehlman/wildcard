@@ -1,5 +1,5 @@
-var wildcard = require('../wildcard'),
-    expect = require('expect.js'),
+var wildcard = require('../'),
+    test = require('tape'),
     testdata = {
         'a.b.c' : {},
         'a.b'   : {},
@@ -7,40 +7,50 @@ var wildcard = require('../wildcard'),
         'a.b.d' : {}
     };
     
-describe('object result matching tests', function() {
-    it('should return 4 matches for a.*', function() {
+test('object result matching tests', function(t) {
+    t.test('should return 4 matches for a.*', function(t) {
         var matches = wildcard('a.*', testdata);
-        
-        expect(matches['a.b.c']).to.be.ok();
-        expect(matches['a.b']).to.be.ok();
-        expect(matches['a']).to.be.ok();
-        expect(matches['a.b.d']).to.be.ok();
+
+        t.plan(4);
+        t.ok(matches['a.b.c']);
+        t.ok(matches['a.b']);
+        t.ok(matches['a']);
+        t.ok(matches['a.b.d']);
+        t.end();
     });
-    
-    it('should return 3 matches for a.b.*', function() {
+
+    t.test('should return 3 matches for a.b.*', function(t) {
         var matches = wildcard('a.b.*', testdata);
-        
-        expect(matches['a.b.c']).to.be.ok();
-        expect(matches['a.b']).to.be.ok();
-        expect(matches['a']).to.not.be.ok();
-        expect(matches['a.b.d']).to.be.ok();
+
+        t.plan(4);
+        t.ok(matches['a.b.c']);
+        t.ok(matches['a.b']);
+        t.notOk(matches['a']);
+        t.ok(matches['a.b.d']);
+        t.end();
     });
-    
-    it('should return 1 matches for a.*.c', function() {
+
+    t.test('should return 1 matches for a.*.c', function(t) {
         var matches = wildcard('a.*.c', testdata);
-        
-        expect(matches['a.b.c']).to.be.ok();
-        expect(matches['a.b']).to.not.be.ok();
-        expect(matches['a']).to.not.be.ok();
-        expect(matches['a.b.d']).to.not.be.ok();
+            
+        t.plan(4);
+        t.ok(matches['a.b.c']);
+        t.notOk(matches['a.b']);
+        t.notOk(matches['a']);
+        t.notOk(matches['a.b.d']);
+        t.end();
     });
     
-    it('should return 0 matches for b.*.d', function() {
+    t.test('should return 0 matches for b.*.d', function(t) {
         var matches = wildcard('b.*.d', testdata);
         
-        expect(matches['a.b.c']).to.not.be.ok();
-        expect(matches['a.b']).to.not.be.ok();
-        expect(matches['a']).to.not.be.ok();
-        expect(matches['a.b.d']).to.not.be.ok();
+        t.plan(4);
+        t.notOk(matches['a.b.c']);
+        t.notOk(matches['a.b']);
+        t.notOk(matches['a']);
+        t.notOk(matches['a.b.d']);
+        t.end();
     });
+
+    t.end();
 });
