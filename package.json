@@ -9,18 +9,30 @@
   "version": "0.1.4",
   "dependencies": {},
   "devDependencies": {
-    "tape": "1.0.x"
+    "tape": "~1.0.4"
   },
   "testling": {
-    "files": "test/*.js",
-    "browsers": [
-      "ie/9",
-      "ie/10",
-      "chrome/latest",
-      "firefox/latest",
-      "safari/latest",
-      "opera/latest"
-    ]
+    "files": "test/all.js",
+    "browsers": {
+      "ie": [
+        "latest"
+      ],
+      "ff": [
+        "latest",
+        "nightly"
+      ],
+      "chrome": [
+        "latest",
+        "canary"
+      ],
+      "opera": [
+        "latest",
+        "next"
+      ],
+      "safari": [
+        "latest"
+      ]
+    }
   },
   "repository": {
     "type": "git",
@@ -30,7 +42,16 @@
     "url": "http://github.com/DamonOehlman/wildcard/issues"
   },
   "scripts": {
-    "test": "./node_modules/.bin/tape test/*.js"
+    "test": "$(npm bin)/tape test/all.js",
+    "gendocs": "gendocs > README.md"
   },
-  "contributors": []
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "string",
+    "wildcard"
+  ],
+  "license": "MIT"
 }
