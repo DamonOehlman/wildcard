@@ -4,5 +4,7 @@
     "travis": true,
     "stability": "stable",
     "testling": true
-  }
+  },
+
+  "license": {}
 }
