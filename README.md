@@ -7,10 +7,9 @@ functionality that is found in the
 
 [![NPM](https://nodei.co/npm/wildcard.png)](https://nodei.co/npm/wildcard/)
 
-[![Build Status](https://travis-ci.org/DamonOehlman/wildcard.png?branch=master)](https://travis-ci.org/DamonOehlman/wildcard)
-[![stable](http://hughsk.github.io/stability-badges/dist/stable.svg)](http://github.com/hughsk/stability-badges)
-
+[![Build Status](https://img.shields.io/travis/DamonOehlman/wildcard.svg?branch=master)](https://travis-ci.org/DamonOehlman/wildcard) [![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/badges/stability-badges) 
 [![browser support](https://ci.testling.com/DamonOehlman/wildcard.png)](https://ci.testling.com/DamonOehlman/wildcard)
+
 
 
 ## Usage
@@ -18,34 +17,46 @@ functionality that is found in the
 It works with strings:
 
 ```js
-wildcard('foo.*', 'foo.bar'); // true
-wildcard('foo.*', 'foo'); // true
+var wildcard = require('wildcard');
+
+console.log(wildcard('foo.*', 'foo.bar'));
+// --> true
+
+console.log(wildcard('foo.*', 'foo'));
+// --> true
+
 ```
 
 Arrays:
 
 ```js
+var wildcard = require('wildcard');
 var testdata = [
-    'a.b.c',
-    'a.b',
-    'a',
-    'a.b.d'
+  'a.b.c',
+  'a.b',
+  'a',
+  'a.b.d'
 ];
 
-wildcard('a.b.*', testdata); // ['a.b.c', 'a.b', 'a.b.d']
+console.log(wildcard('a.b.*', testdata));
+// --> ['a.b.c', 'a.b', 'a.b.d']
+
 ```
 
 Objects (matching against keys):
 
 ```js
+var wildcard = require('wildcard');
 var testdata = {
-    'a.b.c' : {},
-    'a.b'   : {},
-    'a'     : {},
-    'a.b.d' : {}
+  'a.b.c' : {},
+  'a.b'   : {},
+  'a'     : {},
+  'a.b.d' : {}
 };
 
-wildcard('a.*.c', testdata); // { 'a.b.c': {} }
+console.log(wildcard('a.*.c', testdata));
+// --> { 'a.b.c': {} }
+
 ```
 
 While the library works in Node, if you are are looking for file-based
@@ -57,7 +68,7 @@ wildcard matching then you should have a look at:
 
 ### MIT
 
-Copyright (c) 2013 Damon Oehlman <damon.oehlman@gmail.com>
+Copyright (c) 2014 Damon Oehlman <damon.oehlman@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
