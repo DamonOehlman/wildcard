@@ -8,9 +8,6 @@ functionality that is found in the
 [![NPM](https://nodei.co/npm/wildcard.png)](https://nodei.co/npm/wildcard/)
 
 [![Build Status](https://img.shields.io/travis/DamonOehlman/wildcard.svg?branch=master)](https://travis-ci.org/DamonOehlman/wildcard) [![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/badges/stability-badges) 
-[![browser support](https://ci.testling.com/DamonOehlman/wildcard.png)](https://ci.testling.com/DamonOehlman/wildcard)
-
-
 
 ## Usage
 
