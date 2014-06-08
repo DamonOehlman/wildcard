@@ -2,14 +2,14 @@
   "name": "wildcard",
   "description": "Wildcard matching tools",
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
-  "tags": [
+  "keywords": [
     "string",
     "wildcard"
   ],
   "version": "0.1.4",
   "dependencies": {},
   "devDependencies": {
-    "tape": "~2.1.0"
+    "tape": "^2"
   },
   "testling": {
     "files": "test/all.js",
@@ -49,9 +49,5 @@
   "directories": {
     "test": "test"
   },
-  "keywords": [
-    "string",
-    "wildcard"
-  ],
   "license": "MIT"
 }
