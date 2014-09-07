@@ -1,8 +1,6 @@
 /* jshint node: true */
 'use strict';
 
-var reSep = /[\/\.]/;
-
 /**
   # wildcard
 
@@ -30,8 +28,9 @@ var reSep = /[\/\.]/;
   <https://github.com/isaacs/node-glob>
 **/
 
-function WildcardMatcher(text) {
-  this.parts = (text || '').split(reSep);
+function WildcardMatcher(text, separator) {
+  this.separator = separator;
+  this.parts = (text || '').split(separator);
 }
 
 WildcardMatcher.prototype.match = function(input) {
@@ -42,7 +41,7 @@ WildcardMatcher.prototype.match = function(input) {
   var testParts;
 
   if (typeof input == 'string' || input instanceof String) {
-    testParts = (input || '').split(reSep);
+    testParts = (input || '').split(this.separator);
     for (ii = 0; matches && ii < partsCount; ii++) {
       matches = parts[ii] === '*' || parts[ii] === testParts[ii];
     }
@@ -69,8 +68,8 @@ WildcardMatcher.prototype.match = function(input) {
   return matches;
 };
 
-module.exports = function(text, test) {
-  var matcher = new WildcardMatcher(text);
+module.exports = function(text, test, separator) {
+  var matcher = new WildcardMatcher(text, separator || /[\/\.]/);
   if (typeof test != 'undefined') {
     return matcher.match(test);
   }
