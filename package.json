@@ -9,7 +9,7 @@
   "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
-    "tape": "^2"
+    "tape": "^3.0.0"
   },
   "testling": {
     "files": "test/all.js",
