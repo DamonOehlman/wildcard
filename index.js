@@ -43,8 +43,10 @@ WildcardMatcher.prototype.match = function(input) {
   if (typeof input == 'string' || input instanceof String) {
     testParts = (input || '').split(this.separator);
     for (ii = 0; matches && ii < partsCount; ii++) {
-      matches = parts[ii] === '*' || parts[ii] === testParts[ii];
+      matches = parts[ii] === '*' || parts[ii] === testParts[ii];      
     }
+    // If matches, then return the component parts
+    matches = matches && testParts;
   }
   else if (typeof input.splice == 'function') {
     matches = [];
