@@ -20,3 +20,16 @@ test('general wild card with separator matching tests', function(t) {
     t.ok(wildcard('a:*:c', 'a:b:c', ':'), 'a:*:c should match a:b:c');
     t.notOk(wildcard('a:*:c', 'a:b', ':'), 'a:*:c should not match a:b');
 });
+
+test('general wild card with tokens being returned', function(t) {
+
+    t.plan(5);
+    var parts = wildcard('foo.*', 'foo.bar');
+    t.ok(parts);
+    t.equal(parts.length, 2);
+    t.equal(parts[0], 'foo');
+    t.equal(parts[1], 'bar');
+
+    parts = wildcard('foo.*', 'not.matching');
+    t.notOk(parts);
+});
