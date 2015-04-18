@@ -29,8 +29,10 @@
 **/
 
 function WildcardMatcher(text, separator) {
+  this.text = text = text || '';
+  this.hasWild = ~text.indexOf('*');
   this.separator = separator;
-  this.parts = (text || '').split(separator);
+  this.parts = text.split(separator);
 }
 
 WildcardMatcher.prototype.match = function(input) {
@@ -41,12 +43,23 @@ WildcardMatcher.prototype.match = function(input) {
   var testParts;
 
   if (typeof input == 'string' || input instanceof String) {
-    testParts = (input || '').split(this.separator);
-    for (ii = 0; matches && ii < partsCount; ii++) {
-      matches = parts[ii] === '*' || parts[ii] === testParts[ii];      
+    if (!this.hasWild && this.text != input) {
+      matches = false;
+    } else {
+      testParts = (input || '').split(this.separator);
+      for (ii = 0; matches && ii < partsCount; ii++) {
+        if (parts[ii] === '*')  {
+          continue;
+        } else if (ii < testParts.length) {
+          matches = parts[ii] === testParts[ii];
+        } else {
+          matches = false;
+        }
+      }
+
+      // If matches, then return the component parts
+      matches = matches && testParts;
     }
-    // If matches, then return the component parts
-    matches = matches && testParts;
   }
   else if (typeof input.splice == 'function') {
     matches = [];
