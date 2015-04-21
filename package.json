@@ -42,7 +42,7 @@
     "url": "http://github.com/DamonOehlman/wildcard/issues"
   },
   "scripts": {
-    "test": "node_modules/.bin/tape test/all.js",
+    "test": "node test/all.js",
     "gendocs": "gendocs > README.md"
   },
   "main": "index.js",
