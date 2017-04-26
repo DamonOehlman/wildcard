@@ -12,6 +12,14 @@ test('general wild card matching tests', function(t) {
     t.notOk(wildcard('a', 'a.b.c'), 'a should not match a.b.c');
 });
 
+test('regex wildcard matching tests', function(t) {
+  t.plan(4);
+  t.ok(wildcard('*foo', 'foo'), '*foo should match foo');
+  t.ok(wildcard('*foo.b', 'foo.b'), '*foo.b should match foo.b');
+  t.ok(wildcard('a.*foo.c', 'a.barfoo.c'), 'a.barfoo.c should match a.*foo.c');
+  t.ok(wildcard('a.foo*.c', 'a.foobar.c'), 'a.foobar.c should match a.foo*.c');
+});
+
 test('general wild card with separator matching tests', function(t) {
 
     t.plan(5);

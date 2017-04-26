@@ -1,6 +1,8 @@
 /* jshint node: true */
 'use strict';
 
+var REGEXP_PARTS = /(\*|\?)/g;
+
 /**
   # wildcard
 
@@ -35,9 +37,9 @@
 
 function WildcardMatcher(text, separator) {
   this.text = text = text || '';
-  this.hasWild = ~text.indexOf('*');
+  this.hasWild = text.indexOf('*') >= 0;
   this.separator = separator;
-  this.parts = text.split(separator);
+  this.parts = text.split(separator).map(this.classifyPart.bind(this));
 }
 
 WildcardMatcher.prototype.match = function(input) {
@@ -56,7 +58,9 @@ WildcardMatcher.prototype.match = function(input) {
         if (parts[ii] === '*')  {
           continue;
         } else if (ii < testParts.length) {
-          matches = parts[ii] === testParts[ii];
+          matches = parts[ii] instanceof RegExp
+            ? parts[ii].test(testParts[ii])
+            : parts[ii] === testParts[ii];
         } else {
           matches = false;
         }
@@ -86,6 +90,18 @@ WildcardMatcher.prototype.match = function(input) {
   }
 
   return matches;
+};
+
+WildcardMatcher.prototype.classifyPart = function(part) {
+  // in the event that we have been provided a part that is not just a wildcard
+  // then turn this into a regular expression for matching purposes
+  if (part === '*') {
+    return part;
+  } else if (part.indexOf('*') >= 0 || part.indexOf('?') >= 0) {
+    return new RegExp(part.replace(REGEXP_PARTS, '\.$1'));
+  }
+
+  return part;
 };
 
 module.exports = function(text, test, separator) {
