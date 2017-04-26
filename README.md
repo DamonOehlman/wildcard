@@ -1,3 +1,4 @@
+
 # wildcard
 
 Very simple wildcard matching, which is designed to provide the same
@@ -7,7 +8,7 @@ functionality that is found in the
 
 [![NPM](https://nodei.co/npm/wildcard.png)](https://nodei.co/npm/wildcard/)
 
-[![Build Status](https://img.shields.io/travis/DamonOehlman/wildcard.svg?branch=master)](https://travis-ci.org/DamonOehlman/wildcard) [![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/badges/stability-badges) 
+[![Build Status](https://api.travis-ci.org/DamonOehlman/wildcard.svg?branch=master)](https://travis-ci.org/DamonOehlman/wildcard) [![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/dominictarr/stability#stable) 
 
 ## Usage
 
@@ -56,16 +57,21 @@ console.log(wildcard('a.*.c', testdata));
 
 ```
 
-While the library works in Node, if you are are looking for file-based
-wildcard matching then you should have a look at:
+## Alternative Implementations
 
-<https://github.com/isaacs/node-glob>
+- <https://github.com/isaacs/node-glob>
+
+  Great for full file-based wildcard matching.
+
+- <https://github.com/sindresorhus/matcher>
+
+   A well cared for and loved JS wildcard matcher.
 
 ## License(s)
 
 ### MIT
 
-Copyright (c) 2014 Damon Oehlman <damon.oehlman@gmail.com>
+Copyright (c) 2017 Damon Oehlman <damon.oehlman@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

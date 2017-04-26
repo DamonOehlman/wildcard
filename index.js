@@ -22,10 +22,15 @@
 
   <<< examples/objects.js
 
-  While the library works in Node, if you are are looking for file-based
-  wildcard matching then you should have a look at:
+  ## Alternative Implementations
 
-  <https://github.com/isaacs/node-glob>
+  - <https://github.com/isaacs/node-glob>
+
+    Great for full file-based wildcard matching.
+
+  - <https://github.com/sindresorhus/matcher>
+
+     A well cared for and loved JS wildcard matcher.
 **/
 
 function WildcardMatcher(text, separator) {
