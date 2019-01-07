@@ -8,7 +8,13 @@ functionality that is found in the
 
 [![NPM](https://nodei.co/npm/wildcard.png)](https://nodei.co/npm/wildcard/)
 
-[![Build Status](https://api.travis-ci.org/DamonOehlman/wildcard.svg?branch=master)](https://travis-ci.org/DamonOehlman/wildcard) [![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/dominictarr/stability#stable) 
+[![Build Status](https://api.travis-ci.org/DamonOehlman/wildcard.svg?branch=master)](https://travis-ci.org/DamonOehlman/wildcard) [![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/dominictarr/stability#stable)
+
+## NOTE
+
+Work on this project is largely inactive, now so I'd recommend checking out
+the wonderful [`matcher`](https://github.com/sindresorhus/matcher) package
+as a solid alternative.
 
 ## Usage
 
