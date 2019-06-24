@@ -3,14 +3,15 @@ var test = require('tape'),
 
 test('general wild card matching tests', function(t) {
 
-    t.plan(7);
+    t.plan(8);
+    t.ok(wildcard('*', 'test'), '* should match test');
     t.ok(wildcard('foo.*', 'foo.bar'), 'foo.* should match foo.bar');
     t.ok(wildcard('foo.*', 'foo'), 'foo.* should match foo');
     t.ok(wildcard('*.foo.com', 'test.foo.com'), 'test.foo.com should match *.foo.com');
     t.notOk(wildcard('foo.*', 'bar'), 'foo.* should not match bar');
     t.ok(wildcard('a.*.c', 'a.b.c'), 'a.*.c should match a.b.c');
     t.notOk(wildcard('a.*.c', 'a.b'), 'a.*.c should not match a.b');
-    t.notOk(wildcard('a', 'a.b.c'), 'a should not match a.b.c');    
+    t.notOk(wildcard('a', 'a.b.c'), 'a should not match a.b.c');
 });
 
 test('regex wildcard matching tests', function(t) {

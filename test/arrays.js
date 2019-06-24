@@ -14,8 +14,9 @@ var test = require('tape'),
     ];
 
 test('array result matching tests', function(t) {
-    t.plan(4);
+    t.plan(5);
 
+    t.equal(wildcard('*', testdata).length, 4, '* matches all testdata');
     t.equal(wildcard('a.*', testdata).length, 4, '4 matches found');
     t.equal(wildcard('a.b.*', testdata).length, 3, '3 matches found');
     t.equal(wildcard('a.*.c', testdata).length, 1);
