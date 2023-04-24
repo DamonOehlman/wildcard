@@ -1,14 +1,12 @@
-
 # wildcard
 
 Very simple wildcard matching, which is designed to provide the same
 functionality that is found in the
 [eve](https://github.com/adobe-webplatform/eve) eventing library.
 
-
 [![NPM](https://nodei.co/npm/wildcard.png)](https://nodei.co/npm/wildcard/)
 
-[![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/dominictarr/stability#stable) 
+[![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/dominictarr/stability#stable)
 
 ## Usage
 
@@ -22,7 +20,6 @@ console.log(wildcard('foo.*', 'foo.bar'));
 
 console.log(wildcard('foo.*', 'foo'));
 // --> true
-
 ```
 
 Arrays:
@@ -38,7 +35,6 @@ var testdata = [
 
 console.log(wildcard('a.b.*', testdata));
 // --> ['a.b.c', 'a.b', 'a.b.d']
-
 ```
 
 Objects (matching against keys):
@@ -54,24 +50,23 @@ var testdata = {
 
 console.log(wildcard('a.*.c', testdata));
 // --> { 'a.b.c': {} }
-
 ```
 
 ## Alternative Implementations
 
-- <https://github.com/isaacs/node-glob>
+* <https://github.com/isaacs/node-glob>
 
-  Great for full file-based wildcard matching.
+Great for full file-based wildcard matching.
 
-- <https://github.com/sindresorhus/matcher>
+* <https://github.com/sindresorhus/matcher>
 
-   A well cared for and loved JS wildcard matcher.
+A well cared for and loved JS wildcard matcher.
 
 ## License(s)
 
 ### MIT
 
-Copyright (c) 2023 Damon Oehlman <damon.oehlman@gmail.com>
+Copyright (c) 2023 Damon Oehlman <&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x64;&#x61;&#109;&#111;&#110;&#46;&#111;&#101;&#x68;&#108;&#x6d;&#97;&#x6e;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
