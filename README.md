@@ -8,13 +8,7 @@ functionality that is found in the
 
 [![NPM](https://nodei.co/npm/wildcard.png)](https://nodei.co/npm/wildcard/)
 
-[![Build Status](https://api.travis-ci.org/DamonOehlman/wildcard.svg?branch=master)](https://travis-ci.org/DamonOehlman/wildcard) [![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/dominictarr/stability#stable)
-
-## NOTE
-
-Work on this project is largely inactive, now so I'd recommend checking out
-the wonderful [`matcher`](https://github.com/sindresorhus/matcher) package
-as a solid alternative.
+[![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/dominictarr/stability#stable) [![bitHound Score](https://www.bithound.io/github/DamonOehlman/wildcard/badges/score.svg)](https://www.bithound.io/github/DamonOehlman/wildcard) 
 
 ## Usage
 
@@ -77,7 +71,7 @@ console.log(wildcard('a.*.c', testdata));
 
 ### MIT
 
-Copyright (c) 2017 Damon Oehlman <damon.oehlman@gmail.com>
+Copyright (c) 2023 Damon Oehlman <damon.oehlman@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
