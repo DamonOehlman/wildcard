@@ -8,7 +8,7 @@ functionality that is found in the
 
 [![NPM](https://nodei.co/npm/wildcard.png)](https://nodei.co/npm/wildcard/)
 
-[![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/dominictarr/stability#stable) [![bitHound Score](https://www.bithound.io/github/DamonOehlman/wildcard/badges/score.svg)](https://www.bithound.io/github/DamonOehlman/wildcard) 
+[![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/dominictarr/stability#stable) 
 
 ## Usage
 
